@@ -1,0 +1,38 @@
+{
+  "name": "@hmcts/div-service-auth-provider-client",
+  "version": "2.1.1",
+  "description": "Client to obtain tokens for service to service calls",
+  "license": "MIT",
+  "main": "index.js",
+  "engines": {
+    "node": ">=8.0"
+  },
+  "publishConfig": {
+    "registry": "https://artifactory.reform.hmcts.net/artifactory/api/npm/npm-local/"
+  },
+  "scripts": {
+    "eslint": "eslint --ignore-pattern coverage .",
+    "pretest": "yarn eslint",
+    "test": "istanbul cover _mocha",
+    "posttest": "istanbul check-coverage --statements 80 --branches 80 --functions 80 --lines 80"
+  },
+  "pre-commit": [
+    "eslint"
+  ],
+  "dependencies": {
+    "jsonwebtoken": "^8.0.1",
+    "otp": "^0.1.3",
+    "request": "^2.82.0",
+    "request-promise-native": "^1.0.5"
+  },
+  "devDependencies": {
+    "@hmcts/eslint-config": "^1.2.0",
+    "chai": "^4.1.2",
+    "eslint": "^4.8.0",
+    "eslint-plugin-mocha": "^4.11.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.5.3",
+    "pre-commit": "^1.2.2",
+    "sinon": "^4.0.0"
+  }
+}
