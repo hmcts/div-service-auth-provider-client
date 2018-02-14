@@ -4,7 +4,7 @@ Client library to obtain service to service call tokens.
 
 ## Requirements
 
-* Node >=6.0
+* Node >=8.0
 * yarn
 
 As of now, this module is published only in a private repository.
