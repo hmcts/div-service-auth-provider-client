@@ -13,10 +13,8 @@ const lease = (options = {}) => {
   const { microservice, secret } = options;
   const oneTimePassword = otp({ secret }).totp();
   const body = {
-    signIn: {
-      microservice,
-      oneTimePassword
-    }
+    microservice,
+    oneTimePassword
   };
 
   return request.post({ uri, body, json: true });
