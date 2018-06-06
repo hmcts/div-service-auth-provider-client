@@ -60,8 +60,8 @@ describe('serviceAuthProviderClient', () => {
       // Assert.
       const { args } = request.post.getCall(0);
       assert.equal(args[0].uri, `${options.apiBaseUrl}/lease`);
-      assert.equal(args[0].form.microservice, options.microservice);
-      assert.match(args[0].form.oneTimePassword, /^\d{6}$/);
+      assert.equal(args[0].body.microservice, options.microservice);
+      assert.match(args[0].body.oneTimePassword, /^\d{6}$/);
     });
   });
 

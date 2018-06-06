@@ -1,33 +1,54 @@
 #!groovy
 
-@Library('Divorce') _
-
-buildNode {
-  checkoutRepo()
+node {
+  deleteDir()
+  checkout scm
 
   try {
-    make 'install', name: 'Install dependencies'
-    make 'test', name: 'Test'
+
+    stage('Install') {
+      sh 'yarn install'
+    }
+
+    stage('Test') {
+      sh 'yarn test'
+    }
 
     stage('Sonar scanner') {
       onPR {
-        make 'sonar-scan-pr', name: 'Sonar Scan'
+        sh 'yarn sonar-scanner -Dsonar.analysis.mode=preview -Dsonar.host.url=https://sonar.reform.hmcts.net'
       }
 
       onMaster {
-        make 'sonar-scan', name: 'Sonar Scan'
+        sh 'yarn sonar-scanner -Dsonar.host.url=https://sonar.reform.hmcts.net'
       }
     }
 
   } finally {
-    make 'clean'
+    sh 'rm -rf node_modules coverage .sonar .scannerwork'
   }
 
   onPR {
-    enforceVersionBump()
+      def currentVersion = sh(
+        script: "cat package.json | grep -Po '\"version\": \"\\K[^\"]*'",
+        returnStdout: true
+      ).trim()
+
+    try {
+      def latestVersion = sh(
+        script: "npm view @hmcts/div-service-auth-provider-client version --registry https://artifactory.reform.hmcts.net/artifactory/api/npm/npm-local/",
+        returnStdout: true
+      ).trim()
+
+      if (currentVersion == latestVersion) {
+        error "Version needs to be bumped, ${latestVersion} already published"
+      }
+    } catch (error) {
+      // Ignore 404 error when not already published
+    }
   }
 
   onMaster {
-    publishNodePackage()
+    sh 'npm publish --registry https://artifactory.reform.hmcts.net/artifactory/api/npm/npm-local/'
   }
 }

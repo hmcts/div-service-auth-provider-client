@@ -12,12 +12,12 @@ const lease = (options = {}) => {
   const uri = `${options.apiBaseUrl}/lease`;
   const { microservice, secret } = options;
   const oneTimePassword = otp({ secret }).totp();
-  const form = {
+  const body = {
     microservice,
     oneTimePassword
   };
 
-  return request.post({ uri, form });
+  return request.post({ uri, body, json: true });
 };
 
 module.exports = lease;
