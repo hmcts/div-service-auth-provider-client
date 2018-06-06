@@ -1,6 +1,6 @@
 {
   "name": "@hmcts/div-service-auth-provider-client",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Client to obtain tokens for service to service calls",
   "license": "MIT",
   "main": "index.js",
