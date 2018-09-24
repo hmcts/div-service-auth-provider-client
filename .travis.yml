@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "8"
+- '8'
 cache: yarn
 script:
 - yarn --version
@@ -9,9 +9,9 @@ script:
 
 deploy:
   provider: npm
-  email: jenkins-reform@hmcts.net
+  email: jenkins-reform@HMCTS.NET
   api_key:
-    secure: v6YHB7WwXDOA7vR+TknQ0boH9JyMmyKYXU2dI862boS5jP/eE3ItdIO9/kvRTeO0vWf00XDoWUA1Y2OWADi4Ha3i95r/cxYAiwPBuZFqi9Un8ecOsPZ9sX/PTBc2GUX6dM0itxr+lSj9ZEC2Ml63F3K9TGowH88FyfN/U6cvNF9AC1qzA9uvrk5ocHT2HV7cZbstpkk7egUI2rxs5rjtGAffYGPDYgz3lZHi8m7Gh5qW0BVjsYqWzkWhdikXO99MUTA2qrLwACGQFo8ZgkDjy7Jjt2iBx2ofSgS4ArIWsSpHx4/KAMUs1nLvgX2cIjJnsHLf74wXvypiweDmOgh37zOD84fIaC4KaL54NzbPOAcxk5HUfd61OIsn0sbNVP3gFGS8TLZ4zorPazDQIE0PdJGf/SSy+5S6dKn2oO9fGMZDtRTaF7cecm5bB2jAEYUQjfHdoU9mRcyanof0kwPkkmh31Z1DpdAzRJeDAEi9nxJ8FonjdWhkd3qXhJIIbHA1JgiwBXIOIXXlSS6okri1huGQ3cWaNKdoCv3qKivq+BWd5gvF+wiJoV22nTEcokzrgo+7DOGgRNA0gyp16poiK26ueELfeiQX2Y4+0cdFxNmmI0onOTYg4W7wo2jWX/8GE/AqmDdjU+f3BKPIkYdypOOqzo7dP5sbzazN65RLbaA=
+    secure: fg24yxrPIpDaLr/Dhkfxtdn1woY46+g3/4tHtkoZHvCkCh9ifviF6Si25gPP8Unz18SxQaoV9dQrHXyzwE6sRyXXVBMz8RMfhAOWUWxnvkKj0FpXGgNi4mpuq85ieIIfb7aw5QlJYT7CFLpox7DYUlXQ/ZkGOu85hROCk0RpFOQQHXsogETWPcLVvRLawDAK2hjAifdIZ9bbFdTnHdn86alCKkBJKVlDlCzks7FNhDe/NHHMLQfWhAciQQZrj7QAfwwxcaQcN7DsxtsY5NiIvyjeDe8vtMBmhJPeDz02wADmwNRZE0iX/AI8MxIhbu9cTyvv28NcmXjIQZNkrbBI61uUzan8QrrbiLVn/rk2o76RwbKIPW5QKRCLtE++1xQ+IkEqPerVKM/hNT3yG/kfE7+/hTOHyeQGhHFn+6G8u9cSaZe5VnUdCl5/DBiB+heN7mahynQFdPqew5bu5Bxl97kQR0i0Avfsx+rrmx6x+F9VK4k2WdVsOMueH1wvy+69EaSLcRnG0q+USwr/2wQbS7fjBqPhELzD5AgpfDE2RswgJtu5nOrCBY94FrM1G4IE8XExzQk072BMgr9r+BUoRcrxQk655FNUhi5FNXuwXh02T4xk+1NQrFOuXJ2znnw0o5+DHi0+gMa59CFJBWJMYWAoQLR4+rg8/kvur5brlic=
   on:
     tags: true
     repo: hmcts/div-service-auth-provider-client
