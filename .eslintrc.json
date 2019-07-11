@@ -35,7 +35,8 @@
                 "ignoreTemplateLiterals": true,
                 "ignoreComments": true,
                 "ignoreTrailingComments": true,
-                "ignoreRegExpLiterals": true
+                "ignoreRegExpLiterals": true,
+                "ignorePattern": ".*exports.*=.*class.*|.*if \\(.*\\)|.*\\?.*\\:.*|.*\\|\\|.*|.*\\&\\&.*"
             }
         ],
         "arrow-body-style": ["error", "always"],
