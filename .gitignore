@@ -14,3 +14,4 @@ coverage
 .node_repl_history
 *.tgz
 .scannerwork
+.nyc_output
